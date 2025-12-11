@@ -38,7 +38,7 @@ export default function Home() {
       <div className="cy-divider" />
 
       <div className="text-center mt-10">
-        <Link href="#next" aria-label="Scroll down" className="text-3xl text-purple-400 hover:text-purple-300 animate-bounce">↓</Link>
+        <Link href="#next" aria-label="Scroll down" className="text-3xl text-sky-400 hover:text-sky-300 animate-bounce">↓</Link>
         <div id="next" className="sr-only">Next section anchor</div>
       </div>
     </div>

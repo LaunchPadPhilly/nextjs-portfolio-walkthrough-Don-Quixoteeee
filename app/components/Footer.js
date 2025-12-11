@@ -12,7 +12,7 @@ export default function Footer() {
 						href="https://www.linkedin.com/in/syriana-gil-7717b331b"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="font-bold text-purple-500 hover:text-white hover:bg-purple-600/20 px-3 py-1 rounded transition"
+						className="font-bold text-sky-500 hover:text-white hover:bg-sky-600/20 px-3 py-1 rounded transition"
 					>
 						LinkedIn
 					</Link>
@@ -20,7 +20,7 @@ export default function Footer() {
 						href="https://www.upwork.com/freelancers/~your-profile"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="font-bold text-purple-500 hover:text-white hover:bg-purple-600/20 px-3 py-1 rounded transition"
+						className="font-bold text-sky-500 hover:text-white hover:bg-sky-600/20 px-3 py-1 rounded transition"
 					>
 						Upwork
 					</Link>

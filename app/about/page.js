@@ -43,7 +43,7 @@ export default function About() {
               <h2 className="skills-heading text-xl font-semibold mb-3">Core Skills</h2>
               <div className="skills-badges flex flex-wrap gap-2">
                 {skills.map(skill => (
-                  <span key={skill} className="skill-badge px-3 py-1 bg-purple-800/30 rounded-md text-sm text-gray-100">{skill}</span>
+                  <span key={skill} className="skill-badge px-3 py-1 bg-sky-800/30 rounded-md text-sm text-gray-100">{skill}</span>
                 ))}
               </div>
             </div>

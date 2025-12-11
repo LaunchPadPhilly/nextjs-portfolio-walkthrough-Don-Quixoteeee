@@ -46,7 +46,7 @@ export default function Projects() {
                 className="object-cover"
               />
               {p.status === 'Completed' && (
-                <span className="absolute top-3 left-3 bg-purple-600 text-white text-xs px-2 py-1 rounded">{p.status}</span>
+                <span className="absolute top-3 left-3 bg-sky-600 text-white text-xs px-2 py-1 rounded">{p.status}</span>
               )}
             </div>
             <div className="project-body p-4 flex-1 flex flex-col">
@@ -54,7 +54,7 @@ export default function Projects() {
               <p className="project-desc text-gray-300 mb-4 flex-1">{p.description}</p>
               <div className="project-tags mt-2 flex flex-wrap gap-2">
                 {p.technologies.map(tech => (
-                  <span key={tech} className="tech-badge text-sm bg-purple-800/30 text-gray-100 px-2 py-1 rounded">{tech}</span>
+                  <span key={tech} className="tech-badge text-sm bg-sky-800/30 text-gray-100 px-2 py-1 rounded">{tech}</span>
                 ))}
               </div>
             </div>

@@ -29,7 +29,7 @@ export default function Contact() {
               <span className="contact-icon text-2xl">🔗</span>
               <div className="contact-detail">
                 <p className="contact-label font-semibold">LinkedIn</p>
-                <Link href="https://www.linkedin.com/in/syriana-gil-7717b331b" target="_blank" rel="noopener noreferrer" className="contact-link text-purple-400 hover:underline">
+                <Link href="https://www.linkedin.com/in/syriana-gil-7717b331b" target="_blank" rel="noopener noreferrer" className="contact-link text-sky-400 hover:underline">
                   linkedin.com/in/syriana-gil-7717b331b
                 </Link>
                 <p className="contact-subtext text-gray-300">Professional networking and updates</p>
@@ -40,7 +40,7 @@ export default function Contact() {
               <span className="contact-icon text-2xl">💻</span>
               <div className="contact-detail">
                 <p className="contact-label font-semibold">GitHub</p>
-                <Link href="https://github.com/syrianag" target="_blank" rel="noopener noreferrer" className="contact-link text-purple-400 hover:underline">
+                <Link href="https://github.com/syrianag" target="_blank" rel="noopener noreferrer" className="contact-link text-sky-400 hover:underline">
                   github.com/syrianag
                 </Link>
                 <p className="contact-subtext text-gray-300">Follow along on GitHub</p>
