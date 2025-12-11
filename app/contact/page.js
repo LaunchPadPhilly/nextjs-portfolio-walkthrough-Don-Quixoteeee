@@ -13,7 +13,7 @@ export default function Contact() {
       <div className="contact-wrapper grid gap-8 md:grid-cols-2">
         <div className="contact-card bg-gray-900 p-6 rounded-lg">
           <p className="contact-text text-gray-200 mb-4">
-            I'd love to hear from you! Feel free to reach out through any of these channels.
+            I&apos;d love to hear from you! Feel free to reach out through any of these channels.
           </p>
 
           <div className="contact-list space-y-4">

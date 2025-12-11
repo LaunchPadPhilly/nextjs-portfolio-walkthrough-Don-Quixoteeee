@@ -32,7 +32,7 @@ export default function About() {
           <div className="md:col-span-2">
             <div className="profile-card bg-gray-900 p-6 rounded-lg">
               <p className="bio-text text-gray-200">
-                Hi, I'm <strong>Syriana</strong>, a software developer combining code, creativity, and UX. I'm currently focused on learning Next.js, Tailwind CSS, and building accessible, performant interfaces.
+                Hi, I&apos;m <strong>Syriana</strong>, a software developer combining code, creativity, and UX. I&apos;m currently focused on learning Next.js, Tailwind CSS, and building accessible, performant interfaces.
               </p>
               <p className="goal-text text-gray-300 mt-4">
                 My goal is to keep growing—because the sky is not the limit. I want to refine best practices, deepen architectural thinking, and build a portfolio that reflects craftsmanship and curiosity.
