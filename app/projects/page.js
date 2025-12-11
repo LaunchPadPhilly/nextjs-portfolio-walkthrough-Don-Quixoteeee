@@ -26,80 +26,50 @@ export default function Projects() {
   ]
 
   return (
-    <div className="projects-page">
-      <div className="projects-title">
-        <h1>My Projects</h1>
-        <p>Showcase of my work and expertise</p>
+    <div className="projects-page max-w-6xl mx-auto px-6 py-16">
+      <div className="projects-title text-center mb-6">
+        <h1 className="text-3xl font-bold">My Projects</h1>
+        <p className="text-gray-300">Showcase of my work and expertise</p>
       </div>
 
-      <div className="projects-divider"></div>
+      <div className="projects-divider mb-8" />
 
-      <div className="projects-wrapper">
-        <div className="project-grid">
-          {/* Project Card 1 */}
-          <div className="project-card">
-            <div className="project-media">
-              <span className="project-media-text">Project Image Here</span>
-              <span className="featured-badge">Featured</span>
+      <div className="projects-wrapper grid gap-8 md:grid-cols-3">
+        {projects.map((p) => (
+          <article key={p.title} className="project-card bg-gray-900 rounded-lg overflow-hidden shadow-lg flex flex-col">
+            <div className="project-media relative w-full h-48 md:h-40">
+              <Image
+                src={p.image}
+                alt={p.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover"
+              />
+              {p.status === 'Completed' && (
+                <span className="absolute top-3 left-3 bg-sky-600 text-white text-xs px-2 py-1 rounded">{p.status}</span>
+              )}
             </div>
-            <div className="project-body">
-              <h3 className="project-title">Beyond The Code</h3>
-              <p className="project-desc">
-                Welcome to Beyond The Code, a modern web application designed to help individuals, particularly those without traditional college degrees, find opportunities in the tech industry. It features a job search platform and an integrated AI assistant to help with career-related questions.
-              </p>
-              <div className="project-tags">
-                <span className="tech-badge">React19</span>
-                <span className="tech-badge">Tailwind CSS</span>
-                <span className="tech-badge">HTML</span>
-
+            <div className="project-body p-4 flex-1 flex flex-col">
+              <h3 className="project-title text-xl font-semibold mb-2">{p.title}</h3>
+              <p className="project-desc text-gray-300 mb-4 flex-1">{p.description}</p>
+              <div className="project-tags mt-2 flex flex-wrap gap-2">
+                {p.technologies.map(tech => (
+                  <span key={tech} className="tech-badge text-sm bg-sky-800/30 text-gray-100 px-2 py-1 rounded">{tech}</span>
+                ))}
               </div>
             </div>
-          </div>
+          </article>
+        ))}
+      </div>
 
-          {/* Project Card 2 */}
-          <div className="project-card">
-            <div className="project-media">
-              <span className="project-media-text">Project Image Here</span>
-            </div>
-            <div className="project-body">
-              <h3 className="project-title">Project Title</h3>
-              <p className="project-desc">
-                Write a brief description of your project here.
-              </p>
-              <div className="project-tags">
-                <span className="tech-badge">Tech 1</span>
-                <span className="tech-badge">Tech 2</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Project Card 3 */}
-          <div className="project-card">
-            <div className="project-media">
-              <span className="project-media-text">Project Image Here</span>
-            </div>
-            <div className="project-body">
-              <h3 className="project-title">Project Title</h3>
-              <p className="project-desc">
-                Write a brief description of your project here.
-              </p>
-              <div className="project-tags">
-                <span className="tech-badge">Tech 1</span>
-                <span className="tech-badge">Tech 2</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="project-ideas">
-          <h3>💡 Project Ideas:</h3>
-          <ul>
-            <li>Past school projects</li>
-            <li>Personal coding projects</li>
-            <li>Design work or creative projects</li>
-            <li>Future projects you want to build (coming soon!)</li>
-          </ul>
-        </div>
+      <div className="project-ideas mt-10 max-w-3xl mx-auto text-gray-300">
+        <h3 className="text-lg font-semibold">💡 Project Ideas:</h3>
+        <ul className="list-disc list-inside mt-2">
+          <li>Past school projects</li>
+          <li>Personal coding projects</li>
+          <li>Design work or creative projects</li>
+          <li>Future projects you want to build (coming soon!)</li>
+        </ul>
       </div>
     </div>
   )

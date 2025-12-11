@@ -26,8 +26,8 @@ export default function Navbar() {
 												className={
 													`inline-block px-4 py-2 rounded-md text-sm font-bold whitespace-nowrap transition no-underline ` +
 													(active
-														? 'text-purple-400 bg-purple-900/30 hover:bg-purple-800/40 hover:text-white'
-														: 'text-purple-500 hover:text-white hover:bg-purple-600/20')
+														? 'text-sky-400 bg-sky-900/30 hover:bg-sky-800/40 hover:text-white'
+															: 'text-sky-500 hover:text-white hover:bg-sky-600/20')
 												}
 										aria-current={active ? 'page' : undefined}
 									>

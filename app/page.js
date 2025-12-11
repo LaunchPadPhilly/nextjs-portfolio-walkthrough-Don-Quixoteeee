@@ -24,21 +24,21 @@ export default function Home() {
       <section className="home-photo-section">
         <div className="profile-photo-container">
           <Image
-            src="/profile-placeholder.png"
+            src="/profile.jpg"
             alt="Syriana profile photo"
             width={300}
             height={300}
-            className="profile-photo-image"
+            className="profile-photo-image rounded-full"
             priority
           />
-          <p className="profile-photo-hint">Add a real profile photo named <code>profile-placeholder.png</code> in <code>public/</code>.</p>
+          <p className="profile-photo-hint">Profile image loaded from <code>/public/profile.jpg</code>.</p>
         </div>
       </section>
 
       <div className="cy-divider" />
 
       <div className="text-center mt-10">
-        <Link href="#next" aria-label="Scroll down" className="text-3xl text-purple-400 hover:text-purple-300 animate-bounce">↓</Link>
+        <Link href="#next" aria-label="Scroll down" className="text-3xl text-sky-400 hover:text-sky-300 animate-bounce">↓</Link>
         <div id="next" className="sr-only">Next section anchor</div>
       </div>
     </div>
