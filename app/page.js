@@ -24,14 +24,14 @@ export default function Home() {
       <section className="home-photo-section">
         <div className="profile-photo-container">
           <Image
-            src="/profile-placeholder.png"
+            src="/profile.jpg"
             alt="Syriana profile photo"
             width={300}
             height={300}
-            className="profile-photo-image"
+            className="profile-photo-image rounded-full"
             priority
           />
-          <p className="profile-photo-hint">Add a real profile photo named <code>profile-placeholder.png</code> in <code>public/</code>.</p>
+          <p className="profile-photo-hint">Profile image loaded from <code>/public/profile.jpg</code>.</p>
         </div>
       </section>
 
