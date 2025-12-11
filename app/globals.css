@@ -1,14 +1,16 @@
 @import 'tailwindcss';
 
 :root {
-  /* Grey/Black/Purple palette */
-  --background: #0a0a0a; /* near-black */
-  --foreground: #e5e7eb; /* gray-200 */
-  --primary: #7c3aed;   /* purple-600 */
+  /* Pink & White palette */
+  --background: #ffffff; /* white */
+  --foreground: #0f172a; /* slate-900 / dark text */
+  --primary: #ec4899; /* pink-500 */
+  --primary-dark: #be185d; /* pink-700 */
+  --accent-light: #fbcfe8; /* pink-200 */
   --primary-foreground: #ffffff;
-  --secondary: #111827; /* gray-900 */
-  --secondary-foreground: #e5e7eb; /* gray-200 */
-  --border: #1f2937;    /* gray-800 */
+  --secondary: #ffffff; /* keep panels white by default */
+  --secondary-foreground: #0f172a; /* dark text on white */
+  --border: #fde8f2; /* pale pink border */
 }
 
 body {
@@ -23,13 +25,13 @@ html {
 
 /* Custom design tokens */
 :root {
-  --purple-accent: var(--primary); /* Use primary variable */
+  --pink-accent: var(--primary); /* Use primary variable */
 }
 
-/* Glow effect for highlighted purple text */
-.glow-purple {
-  color: var(--purple-accent);
-  text-shadow: 0 0 8px rgba(168,85,247,0.6), 0 0 16px rgba(168,85,247,0.4);
+/* Glow effect for highlighted pink text */
+.glow-pink {
+  color: var(--pink-accent);
+  text-shadow: 0 0 8px rgba(236,72,153,0.45), 0 0 16px rgba(236,72,153,0.25);
 }
 
 /* Unified button styles */
@@ -46,24 +48,24 @@ html {
   padding: 0 2rem; /* horizontal size similar to px-8 */
 }
 .btn-base:focus {
-  outline: 2px solid #a855f7;
+  outline: 2px solid var(--primary-dark);
   outline-offset: 2px;
 }
 .btn-primary {
-  background: var(--purple-accent);
+  background: var(--pink-accent);
   color: var(--primary-foreground);
 }
 .btn-primary:hover {
-  background: #b572fa;
+  background: var(--primary-dark);
 }
 .btn-secondary {
-  background: #000;
-  border: 1px solid #3f3f46; /* gray-700 */
-  color: #e5e7eb; /* gray-200 */
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--foreground);
 }
 .btn-secondary:hover {
-  border-color: var(--purple-accent);
-  color: #ffffff;
+  border-color: var(--pink-accent);
+  color: var(--primary-dark);
 }
 
 @layer utilities {
@@ -71,8 +73,8 @@ html {
     text-wrap: balance;
   }
   
-  .text-gradient-red {
-    background: linear-gradient(135deg, var(--primary-red) 0%, var(--secondary-grey-dark) 100%);
+  .text-gradient-pink {
+    background: linear-gradient(135deg, var(--pink-accent) 0%, var(--accent-light) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -87,10 +89,10 @@ html {
 /* Cyber purple theme utilities inspired by provided design */
 .cy-hero {
   text-align: center;
-  padding: 48px 20px; /* reduced */
-  background: linear-gradient(180deg, rgba(75, 0, 130, 0.25) 0%, rgba(0, 0, 0, 0.85) 100%);
-  border: 2px solid #6b46c1; /* thinner */
-  margin-bottom: 32px; /* reduced */
+  padding: 48px 20px;
+  background: linear-gradient(180deg, rgba(236,72,153,0.08) 0%, rgba(255,255,255,1) 100%);
+  border: 2px solid var(--primary-dark);
+  margin-bottom: 32px;
   position: relative;
   overflow: hidden;
 }
@@ -104,10 +106,10 @@ html {
 }
 
 .cy-title {
-  font-size: clamp(2rem, 3vw + 1rem, 3rem); /* smaller */
-  color: #9d4edd;
+  font-size: clamp(2rem, 3vw + 1rem, 3rem);
+  color: var(--primary-dark);
   text-transform: uppercase;
-  letter-spacing: 4px; /* tighter */
+  letter-spacing: 4px;
   margin-bottom: 10px;
   position: relative;
   display: inline-block;
@@ -125,8 +127,8 @@ html {
 }
 
 .cy-tagline {
-  font-size: 1rem; /* slightly smaller */
-  color: #a3a3a3;
+  font-size: 1rem;
+  color: #475569; /* slate-600 */
   letter-spacing: 1px;
 }
 
@@ -134,18 +136,18 @@ html {
   height: 6px;
   background: repeating-linear-gradient(
     90deg,
-    #9d4edd 0px,
-    #9d4edd 12px,
-    #3c096c 12px,
-    #3c096c 24px
+    var(--pink-accent) 0px,
+    var(--pink-accent) 12px,
+    var(--primary-dark) 12px,
+    var(--primary-dark) 24px
   );
   margin: 40px 0;
 }
 
 /* Generic card/badge/button variants matching the design */
 .cy-card {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d1b3d 100%);
-  border: 3px solid #6b46c1;
+  background: linear-gradient(135deg, #ffffff 0%, #fff7fb 100%);
+  border: 3px solid var(--primary-dark);
   padding: 0;
   position: relative;
   overflow: hidden;
@@ -155,27 +157,27 @@ html {
   content: '';
   position: absolute;
   top: -2px; left: -2px; right: -2px; bottom: -2px;
-  background: linear-gradient(45deg, #9d4edd, #c77dff, #9d4edd);
+  background: linear-gradient(45deg, var(--pink-accent), var(--accent-light), var(--pink-accent));
   z-index: -1;
   opacity: 0;
   transition: opacity 0.4s ease;
 }
 .cy-card:hover::before { opacity: 1; }
-.cy-card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(157, 78, 221, 0.6); }
+.cy-card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(236,72,153,0.12); }
 
-.cy-card-header { background: #3c096c; padding: 15px 20px; border-bottom: 3px solid #9d4edd; }
-.cy-card-header h3 { color: #c77dff; font-size: 1.25rem; text-transform: uppercase; letter-spacing: 2px; }
+.cy-card-header { background: var(--primary-dark); padding: 15px 20px; border-bottom: 3px solid var(--pink-accent); }
+.cy-card-header h3 { color: var(--accent-light); font-size: 1.25rem; text-transform: uppercase; letter-spacing: 2px; }
 .cy-card-body { padding: 25px; }
-.cy-card-body p { color: #b0b0b0; line-height: 1.8; margin-bottom: 20px; }
+.cy-card-body p { color: #475569; line-height: 1.8; margin-bottom: 20px; }
 
-.cy-tech-badge { background: #000; color: #9d4edd; padding: 6px 12px; border: 2px solid #6b46c1; font-size: .85rem; font-weight: 700; text-transform: uppercase; }
+.cy-tech-badge { background: #fff; color: var(--pink-accent); padding: 6px 12px; border: 2px solid var(--primary-dark); font-size: .85rem; font-weight: 700; text-transform: uppercase; }
 
 .cy-link-btn {
   display: inline-block;
   background: transparent;
-  color: #c77dff;
+  color: var(--accent-light);
   padding: 12px 30px;
-  border: 3px solid #9d4edd;
+  border: 3px solid var(--pink-accent);
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
@@ -189,12 +191,12 @@ html {
   content: '';
   position: absolute;
   top: 0; left: -100%; width: 100%; height: 100%;
-  background: #9d4edd;
+  background: var(--pink-accent);
   transition: left 0.3s ease;
   z-index: -1;
 }
 .cy-link-btn:hover::before { left: 0; }
-.cy-link-btn:hover { color: #000; }
+.cy-link-btn:hover { color: #fff; }
 
 /* Pixel background styling */
 .pixel-bg {
@@ -210,11 +212,11 @@ html {
 
 .pixel-bg .pixel {
   position: absolute;
-  background: #9d4edd;
+  background: var(--pink-accent);
   box-shadow: 
-    0 0 4px rgba(157, 78, 221, 0.8),
-    0 0 8px rgba(157, 78, 221, 0.6),
-    0 0 12px rgba(199, 125, 255, 0.4);
+    0 0 4px rgba(236,72,153,0.18),
+    0 0 8px rgba(236,72,153,0.14),
+    0 0 12px rgba(251,207,232,0.12);
   border-radius: 0px;
   animation-name: floatPixel;
   animation-iteration-count: infinite;
@@ -261,9 +263,9 @@ html {
 }
 
 .profile-photo-image {
-  border-radius: 0;
-  border: 4px solid #9d4edd;
-  box-shadow: 0 0 30px rgba(157, 78, 221, 0.6);
+  border-radius: 9999px; /* circular */
+  border: 4px solid var(--pink-accent);
+  box-shadow: 0 8px 40px rgba(236,72,153,0.12);
   transition: all 0.4s ease;
   width: 300px;
   height: 300px;
@@ -271,9 +273,9 @@ html {
 }
 
 .profile-photo-image:hover {
-  border-color: #c77dff;
-  box-shadow: 0 0 50px rgba(157, 78, 221, 0.9);
-  transform: scale(1.05);
+  border-color: var(--accent-light);
+  box-shadow: 0 0 60px rgba(236,72,153,0.18);
+  transform: scale(1.03);
 }
 
 .profile-photo-hint {

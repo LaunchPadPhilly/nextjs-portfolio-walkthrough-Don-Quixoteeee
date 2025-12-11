@@ -1,7 +1,15 @@
 "use client"
-import { useMemo } from 'react'
+import { useMemo, useEffect, useState } from 'react'
 
 export default function PixelBackground({ count = 50 }) {
+  const [mounted, setMounted] = useState(false)
+
+  // Ensure we only render randomized pixels after mounting to avoid
+  // server/client hydration mismatches caused by Math.random values.
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   const pixels = useMemo(() => {
     const arr = []
     for (let i = 0; i < count; i++) {
@@ -16,6 +24,11 @@ export default function PixelBackground({ count = 50 }) {
     }
     return arr
   }, [count])
+
+  // Render nothing server-side / before mount to keep SSR output stable.
+  if (!mounted) {
+    return <div className="pointer-events-none fixed inset-0 -z-10" aria-hidden="true" />
+  }
 
   return (
     <div 
